@@ -1,0 +1,32 @@
+{
+  "name": "examen-web2",
+  "version": "1.0.0",
+  "description": "Examen Desarrollo Web Segundo Parcial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivandumas/examen-web2.git"
+  },
+  "keywords": [
+    "Examen",
+    "Ayuda",
+    "Sacar100"
+  ],
+  "author": "IADM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivandumas/examen-web2/issues"
+  },
+  "homepage": "https://github.com/ivandumas/examen-web2#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.3.2",
+    "sequelize": "^6.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}
