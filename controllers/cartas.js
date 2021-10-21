@@ -3,15 +3,26 @@ const Carta = require('../utils/database').models.carta
 
 exports.postAgregarCarta = (req, res)=>{
     console.log(req.body)
-    Carta.create(req.body)
-    .then(result=>{
-        console.log("Carta creada exitosamente")
-        res.json({estado:"aceptado"})
-    })
-    .catch((err)=>{
-        console.log(err)
-        res.json({estado:"error"})
-    })    
+    const found = Carta.findOne({
+        where : { 
+            val : req.body.val,
+            palo : req.body.palo
+        }
+    });
+    if (found === null) {
+        Carta.create(req.body)
+        .then(result=>{
+            console.log("Carta creada exitosamente")
+            res.json({estado:"aceptado"})
+        })
+        .catch((err)=>{
+            console.log(err)
+            res.json({estado:"error"})
+        })   
+    } else {
+        console.log("La Carta ya existe")
+        res.json({estado:"ya existe"})
+    }
 }
 
 
